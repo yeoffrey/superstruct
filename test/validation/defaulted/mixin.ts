@@ -1,22 +1,22 @@
+import { Test } from '../../types'
 import { defaulted, string, object, number } from '../../../src'
 
-export const Struct = defaulted(
-  object({
-    title: string(),
-    version: number(),
-  }),
-  {
+export const mixinTest: Test = {
+  Struct: defaulted(
+    object({
+      title: string(),
+      version: number(),
+    }),
+    {
+      title: 'Untitled',
+    }
+  ),
+  data: {
+    version: 0,
+  },
+  output: {
     title: 'Untitled',
-  }
-)
-
-export const data = {
-  version: 0,
+    version: 0,
+  },
+  create: true,
 }
-
-export const output = {
-  title: 'Untitled',
-  version: 0,
-}
-
-export const create = true

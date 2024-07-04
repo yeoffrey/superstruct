@@ -1,14 +1,16 @@
+import {Test} from '../../types'
 import { partial, string, number } from '../../../src'
 
-export const Struct = partial({
-  name: string(),
-  age: number(),
-})
 
-export const data = {
-  name: 'john',
-}
-
-export const output = {
-  name: 'john',
-}
+export const validPartialTest: Test = {
+ Struct: partial( {
+    name: string(),
+    age: number(),
+    })
+ data:  {
+    name: 'john',
+    }
+, output:  {
+    name: 'john',
+    }
+,}

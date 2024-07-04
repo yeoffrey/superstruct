@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { number, size } from '../../../src'
 
-export const Struct = size(number(), 1, 5)
-
-export const data = 3
-
-export const output = 3
+export const validNumberTest: Test = {
+  Struct: size(number(), 1, 5),
+  data: 3,
+  output: 3,
+}

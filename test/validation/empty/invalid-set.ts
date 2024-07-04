@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { set, empty, number } from '../../../src'
 
-export const Struct = empty(set(number()))
+const data = new Set([1, 2, 3])
 
-export const data = new Set([1, 2, 3])
-
-export const failures = [
-  {
-    value: data,
-    type: 'set',
-    refinement: 'empty',
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidSetTest: Test = {
+  Struct: empty(set(number())),
+  data,
+  failures: [
+    {
+      value: data,
+      type: 'set',
+      refinement: 'empty',
+      path: [],
+      branch: [data],
+    },
+  ],
+}

@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { deprecated, string } from '../../../src'
 
-export const Struct = deprecated(string(), () => {})
+const data = null
 
-export const data = null
-
-export const failures = [
-  {
-    value: null,
-    type: 'string',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidNullTest: Test = {
+  Struct: deprecated(string(), () => {}),
+  data,
+  failures: [
+    {
+      value: null,
+      type: 'string',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

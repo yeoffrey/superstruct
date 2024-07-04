@@ -1,11 +1,9 @@
+import { Test } from '../../types'
 import { string, unknown, coerce } from '../../../src'
 
-export const Struct = coerce(string(), unknown(), (x) =>
-  x == null ? 'unknown' : x
-)
-
-export const data = 'known'
-
-export const output = 'known'
-
-export const create = true
+export const unchangedTest: Test = {
+  Struct: coerce(string(), unknown(), (x) => (x == null ? 'unknown' : x)),
+  data: 'known',
+  output: 'known',
+  create: true,
+}

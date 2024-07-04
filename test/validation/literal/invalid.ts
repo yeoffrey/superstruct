@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { literal } from '../../../src'
 
-export const Struct = literal(42)
+const data = false
 
-export const data = false
-
-export const failures = [
-  {
-    value: false,
-    type: 'literal',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: literal(42),
+  data,
+  failures: [
+    {
+      value: false,
+      type: 'literal',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

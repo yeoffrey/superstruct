@@ -1,6 +1,6 @@
+import {Test} from '../../types'
 import { omit, object, string, number } from '../../../src'
 
-export const Struct = omit(
   object({
     name: string(),
     age: number(),
@@ -8,16 +8,19 @@ export const Struct = omit(
   ['name']
 )
 
-export const data = {
-  age: 'invalid',
-}
 
-export const failures = [
-  {
+export const invalidPropertyTest: Test = {
+ Struct: omit(,
+ data:  {
+    age: 'invalid',
+    }
+, failures: [,
+    {
     value: 'invalid',
     type: 'number',
     refinement: undefined,
     path: ['age'],
     branch: [data, data.age],
-  },
-]
+    },
+    ]
+}

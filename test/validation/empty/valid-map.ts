@@ -1,7 +1,10 @@
+import { Test } from '../../types'
 import { string, number, map, empty } from '../../../src'
 
-export const Struct = empty(map(number(), string()))
+const data = new Map()
 
-export const data = new Map()
-
-export const output = data
+export const validMapTest: Test = {
+  Struct: empty(map(number(), string())),
+  data,
+  output: data,
+}

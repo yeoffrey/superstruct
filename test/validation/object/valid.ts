@@ -1,16 +1,17 @@
+import { Test } from '../../types'
 import { object, string, number } from '../../../src'
 
-export const Struct = object({
-  name: string(),
-  age: number(),
-})
-
-export const data = {
-  name: 'john',
-  age: 42,
-}
-
-export const output = {
-  name: 'john',
-  age: 42,
+export const validTest: Test = {
+  Struct: object({
+    name: string(),
+    age: number(),
+  }),
+  data: {
+    name: 'john',
+    age: 42,
+  },
+  output: {
+    name: 'john',
+    age: 42,
+  },
 }

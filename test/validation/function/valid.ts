@@ -1,7 +1,10 @@
+import { Test } from '../../types'
 import { func } from '../../../src'
 
-export const Struct = func()
+const data = function () {}
 
-export const data = function () {}
-
-export const output = data
+export const validTest: Test = {
+  Struct: func(),
+  data,
+  output: data,
+}

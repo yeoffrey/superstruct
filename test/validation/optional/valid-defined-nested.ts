@@ -1,16 +1,18 @@
+import {Test} from '../../types'
 import { type, string, number, optional } from '../../../src'
 
-export const Struct = type({
-  name: optional(string()),
-  age: number(),
-})
 
-export const data = {
-  name: 'Jill',
-  age: 42,
-}
-
-export const output = {
-  name: 'Jill',
-  age: 42,
-}
+export const validDefinedNestedTest: Test = {
+ Struct: type( {
+    name: optional(string()),
+    age: number(),
+    })
+ data:  {
+    name: 'Jill',
+    age: 42,
+    }
+, output:  {
+    name: 'Jill',
+    age: 42,
+    }
+,}

@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { string, empty } from '../../../src'
 
-export const Struct = empty(string())
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'string',
-    refinement: 'empty',
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidStringTest: Test = {
+  Struct: empty(string()),
+  data: 'invalid',
+  failures: [
+    {
+      value: 'invalid',
+      type: 'string',
+      refinement: 'empty',
+      path: [],
+      branch: [data],
+    },
+  ],
+}

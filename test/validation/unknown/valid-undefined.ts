@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { unknown } from '../../../src'
 
-export const Struct = unknown()
-
-export const data = undefined
-
-export const output = undefined
+export const validUndefinedTest: Test = {
+  Struct: unknown(),
+  data: undefined,
+  output: undefined,
+}

@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { unknown } from '../../../src'
 
-export const Struct = unknown()
-
-export const data = 1
-
-export const output = 1
+export const validNumberTest: Test = {
+  Struct: unknown(),
+  data: 1,
+  output: 1,
+}

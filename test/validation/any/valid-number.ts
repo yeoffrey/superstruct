@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { any } from '../../../src'
 
-export const Struct = any()
-
-export const data = 1
-
-export const output = 1
+export const validNumberTest: Test = {
+  Struct: any(),
+  data: 1,
+  output: 1,
+}

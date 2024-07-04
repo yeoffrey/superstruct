@@ -1,7 +1,10 @@
+import { Test } from '../../types'
 import { number, set, empty } from '../../../src'
 
-export const Struct = empty(set(number()))
+const data = new Set()
 
-export const data = new Set()
-
-export const output = data
+export const validSetTest: Test = {
+  Struct: empty(set(number())),
+  data,
+  output: data,
+}

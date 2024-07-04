@@ -1,10 +1,13 @@
+import { Test } from '../../types'
 import { map } from '../../../src'
 
-export const Struct = map()
-
-export const data = new Map([
+const data = new Map([
   ['a', 1],
   [2, true],
 ] as any)
 
-export const output = data
+export const validOpaqueTest: Test = {
+  Struct: map(),
+  data,
+  output: data,
+}

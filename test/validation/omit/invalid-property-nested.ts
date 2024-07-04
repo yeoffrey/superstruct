@@ -1,6 +1,6 @@
+import {Test} from '../../types'
 import { omit, object, string } from '../../../src'
 
-export const Struct = omit(
   object({
     name: string(),
     address: object({
@@ -11,19 +11,22 @@ export const Struct = omit(
   ['name']
 )
 
-export const data = {
+
+export const invalidPropertyNestedTest: Test = {
+ Struct: omit(,
+ data:  {
   address: {
     street: 123,
     city: 'Springfield',
-  },
-}
-
-export const failures = [
-  {
+    },
+    }
+, failures: [,
+    {
     value: 123,
     type: 'string',
     refinement: undefined,
     path: ['address', 'street'],
     branch: [data, data.address, data.address.street],
-  },
-]
+    },
+    ]
+}

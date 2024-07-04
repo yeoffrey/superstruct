@@ -1,19 +1,23 @@
+import { Test } from '../../types'
 import { deprecated, number, object } from '../../../src'
 
-export const Struct = object({
-  deprecatedKey: deprecated(number(), () => {}),
-})
-
-export const data = {
+const data = {
   deprecatedKey: '42',
 }
 
-export const failures = [
-  {
-    value: '42',
-    type: 'number',
-    refinement: undefined,
-    path: ['deprecatedKey'],
-    branch: [data, data.deprecatedKey],
-  },
-]
+export const invalidPropertyTest: Test = {
+  Struct: object({
+    deprecatedKey: deprecated(number(), () => {}),
+  }),
+  data,
+  failures: [
+    ,
+    {
+      value: '42',
+      type: 'number',
+      refinement: undefined,
+      path: ['deprecatedKey'],
+      branch: [data, data.deprecatedKey],
+    },
+  ],
+}

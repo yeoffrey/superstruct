@@ -1,6 +1,6 @@
+import {Test} from '../../types'
 import { pick, object, string, number } from '../../../src'
 
-export const Struct = pick(
   object({
     name: string(),
     age: number(),
@@ -8,10 +8,13 @@ export const Struct = pick(
   ['name']
 )
 
-export const data = {
-  name: 'john',
-}
 
-export const output = {
-  name: 'john',
-}
+export const validTest: Test = {
+ Struct: pick(,
+ data:  {
+    name: 'john',
+    }
+, output:  {
+    name: 'john',
+    }
+,}

@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { string, size } from '../../../src'
 
-export const Struct = size(string(), 4)
-
-export const data = 'abcd'
-
-export const output = 'abcd'
+export const validExactTest: Test = {
+  Struct: size(string(), 4),
+  data: 'abcd',
+  output: 'abcd',
+}

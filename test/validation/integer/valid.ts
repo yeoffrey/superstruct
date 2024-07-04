@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { integer } from '../../../src'
 
-export const Struct = integer()
-
-export const data = 42
-
-export const output = 42
+export const validTest: Test = {
+  Struct: integer(),
+  data: 42,
+  output: 42,
+}

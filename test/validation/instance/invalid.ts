@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { instance } from '../../../src'
 
-export const Struct = instance(Array)
+const data = false
 
-export const data = false
-
-export const failures = [
-  {
-    value: false,
-    type: 'instance',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: instance(Array),
+  data,
+  failures: [
+    {
+      value: false,
+      type: 'instance',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

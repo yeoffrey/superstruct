@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { deprecated, number } from '../../../src'
 
-export const Struct = deprecated(number(), () => {})
-
-export const data = undefined
-
-export const output = undefined
+export const validUndefinedTest: Test = {
+  Struct: deprecated(number(), () => {}),
+  data: undefined,
+  output: undefined,
+}

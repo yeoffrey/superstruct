@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { string, empty } from '../../../src'
 
-export const Struct = empty(string())
-
-export const data = ''
-
-export const output = ''
+export const validStringTest: Test = {
+  Struct: empty(string()),
+  data: '',
+  output: '',
+}

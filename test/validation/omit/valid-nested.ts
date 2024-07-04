@@ -1,6 +1,6 @@
+import {Test} from '../../types'
 import { omit, object, string } from '../../../src'
 
-export const Struct = omit(
   object({
     name: string(),
     address: object({
@@ -11,16 +11,19 @@ export const Struct = omit(
   ['name']
 )
 
-export const data = {
-  address: {
-    street: '123 Fake St',
-    city: 'Springfield',
-  },
-}
 
-export const output = {
+export const validNestedTest: Test = {
+ Struct: omit(,
+ data:  {
   address: {
     street: '123 Fake St',
     city: 'Springfield',
-  },
-}
+    },
+    }
+, output:  {
+  address: {
+    street: '123 Fake St',
+    city: 'Springfield',
+    },
+    }
+,}

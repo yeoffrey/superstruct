@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { number, nullable } from '../../../src'
 
-export const Struct = nullable(number())
-
-export const data = 42
-
-export const output = 42
+export const validDefinedTest: Test = {
+  Struct: nullable(number()),
+  data: 42,
+  output: 42,
+}

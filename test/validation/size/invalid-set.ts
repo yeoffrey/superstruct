@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { set, size, number } from '../../../src'
 
-export const Struct = size(set(number()), 1, 5)
 
-export const data = new Set()
 
-export const failures = [
   {
     value: data,
     type: 'set',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidSetTest: Test = {
+ Struct: size(set(number()), 1, 5),
+ data: new Set(),
+ failures: [,
+}

@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { string, refine } from '../../../src'
 
-export const Struct = refine(string(), 'email', (value) => value.includes('@'))
 
-export const data = 'invalid'
 
-export const failures = [
   {
     value: 'invalid',
     type: 'string',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidTest: Test = {
+ Struct: refine(string(), 'email', (value) => value.includes('@')),
+ data: 'invalid',
+ failures: [,
+}

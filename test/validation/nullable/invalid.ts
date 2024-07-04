@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { number, nullable } from '../../../src'
 
-export const Struct = nullable(number())
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'number',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: nullable(number()),
+  data,
+  failures: [
+    {
+      value: 'invalid',
+      type: 'number',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

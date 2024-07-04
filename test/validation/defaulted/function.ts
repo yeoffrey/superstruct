@@ -1,9 +1,9 @@
+import { Test } from '../../types'
 import { number, defaulted } from '../../../src'
 
-export const Struct = defaulted(number(), () => 42)
-
-export const data = undefined
-
-export const output = 42
-
-export const create = true
+export const functionTest: Test = {
+  Struct: defaulted(number(), () => 42),
+  data: undefined,
+  output: 42,
+  create: true,
+}

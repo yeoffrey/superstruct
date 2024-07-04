@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { lazy, string } from '../../../src'
 
-export const Struct = lazy(() => string())
+const data = 3
 
-export const data = 3
-
-export const failures = [
-  {
-    value: 3,
-    type: 'string',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: lazy(() => string()),
+  data,
+  failures: [
+    {
+      value: 3,
+      type: 'string',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

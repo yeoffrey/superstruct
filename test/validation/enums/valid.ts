@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { enums } from '../../../src'
 
-export const Struct = enums(['one', 'two'])
-
-export const data = 'two'
-
-export const output = 'two'
+export const validTest: Test = {
+  Struct: enums(['one', 'two']),
+  data: 'two',
+  output: 'two',
+}

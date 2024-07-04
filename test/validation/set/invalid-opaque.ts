@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { set } from '../../../src'
 
-export const Struct = set()
 
-export const data = 'invalid'
 
-export const failures = [
   {
     value: 'invalid',
     type: 'set',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidOpaqueTest: Test = {
+ Struct: set(),
+ data: 'invalid',
+ failures: [,
+}

@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { bigint } from '../../../src'
 
-export const Struct = bigint()
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'bigint',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: bigint(),
+  data,
+  failures: [
+    {
+      value: 'invalid',
+      type: 'bigint',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

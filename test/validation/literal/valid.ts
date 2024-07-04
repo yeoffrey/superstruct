@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { literal } from '../../../src'
 
-export const Struct = literal(42)
-
-export const data = 42
-
-export const output = 42
+export const validTest: Test = {
+  Struct: literal(42),
+  data: 42,
+  output: 42,
+}

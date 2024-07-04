@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { boolean } from '../../../src'
 
-export const Struct = boolean()
-
-export const data = true
-
-export const output = true
+export const validTest: Test = {
+  Struct: boolean(),
+  data: true,
+  output: true,
+}

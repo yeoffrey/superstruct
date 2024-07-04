@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { number, optional } from '../../../src'
 
-export const Struct = optional(number())
 
-export const data = 'invalid'
 
-export const failures = [
   {
     value: 'invalid',
     type: 'number',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidTest: Test = {
+ Struct: optional(number()),
+ data: 'invalid',
+ failures: [,
+}

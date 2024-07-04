@@ -1,3 +1,4 @@
+import {Test} from '../../types'
 import { string, refine, object } from '../../../src'
 
 const PasswordValidator = refine(string(), 'MinimumLength', (pw) =>
@@ -8,7 +9,6 @@ const changePasswordStruct = object({
   confirmPassword: string(),
 })
 
-export const Struct = refine(
   changePasswordStruct,
   'PasswordsDoNotMatch',
   (values) => {
@@ -18,24 +18,27 @@ export const Struct = refine(
   }
 )
 
-export const data = {
-  newPassword: '1234567',
-  confirmPassword: '123456789',
-}
 
-export const failures = [
-  {
+export const invalidMultipleRefinementsTest: Test = {
+ Struct: refine(,
+ data:  {
+    newPassword: '1234567',
+    confirmPassword: '123456789',
+    }
+, failures: [,
+    {
     value: data.newPassword,
     type: 'string',
     refinement: 'MinimumLength',
     path: ['newPassword'],
     branch: [data, data.newPassword],
-  },
-  {
+    },
+    {
     value: data,
     type: 'object',
     refinement: 'PasswordsDoNotMatch',
     path: [],
     branch: [data],
-  },
-]
+    },
+    ]
+}

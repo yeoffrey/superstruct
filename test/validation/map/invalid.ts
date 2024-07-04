@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { map, string, number } from '../../../src'
 
-export const Struct = map(string(), number())
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'map',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: map(string(), number()),
+  data,
+  failures: [
+    {
+      value: 'invalid',
+      type: 'map',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

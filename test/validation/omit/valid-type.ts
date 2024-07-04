@@ -1,6 +1,6 @@
+import {Test} from '../../types'
 import { omit, type, string, number } from '../../../src'
 
-export const Struct = omit(
   type({
     name: string(),
     age: number(),
@@ -8,12 +8,15 @@ export const Struct = omit(
   ['age']
 )
 
-export const data = {
-  name: 'john',
-  unknownProperty: 'unknown',
-}
 
-export const output = {
-  name: 'john',
-  unknownProperty: 'unknown',
-}
+export const validTypeTest: Test = {
+ Struct: omit(,
+ data:  {
+    name: 'john',
+    unknownProperty: 'unknown',
+    }
+, output:  {
+    name: 'john',
+    unknownProperty: 'unknown',
+    }
+,}

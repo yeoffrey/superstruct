@@ -1,17 +1,19 @@
+import { Test } from '../../types'
 import { string, number, coerce } from '../../../src'
 
-export const Struct = coerce(string(), number(), (x) => 'known')
+const data = false
 
-export const data = false
-
-export const failures = [
-  {
-    value: false,
-    type: 'string',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
-
-export const create = true
+export const conditionNotMetTest: Test = {
+  Struct: coerce(string(), number(), (x) => 'known'),
+  data,
+  failures: [
+    {
+      value: false,
+      type: 'string',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+  create: true,
+}

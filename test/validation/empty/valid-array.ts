@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { number, array, empty } from '../../../src'
 
-export const Struct = empty(array(number()))
-
-export const data = []
-
-export const output = []
+export const validArrayTest: Test = {
+  Struct: empty(array(number())),
+  data: [],
+  output: [],
+}

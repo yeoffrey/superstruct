@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { any } from '../../../src'
 
-export const Struct = any()
-
-export const data = 'valid'
-
-export const output = 'valid'
+export const validStringTest: Test = {
+  Struct: any(),
+  data: 'valid',
+  output: 'valid',
+}

@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { boolean } from '../../../src'
 
-export const Struct = boolean()
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'boolean',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: boolean(),
+  data,
+  failures: [
+    {
+      value: 'invalid',
+      type: 'boolean',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

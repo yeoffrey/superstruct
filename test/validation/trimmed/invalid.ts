@@ -1,17 +1,19 @@
+import { Test } from '../../types'
 import { string, trimmed } from '../../../src'
 
-export const Struct = trimmed(string())
+const data = false
 
-export const data = false
-
-export const failures = [
-  {
-    value: false,
-    type: 'string',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
-
-export const create = true
+export const invalidTest: Test = {
+  Struct: trimmed(string()),
+  data,
+  failures: [
+    {
+      value: false,
+      type: 'string',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+  create: true,
+}

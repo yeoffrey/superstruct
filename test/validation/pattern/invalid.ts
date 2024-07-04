@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { string, pattern } from '../../../src'
 
-export const Struct = pattern(string(), /\d+/)
 
-export const data = 'invalid'
 
-export const failures = [
   {
     value: 'invalid',
     type: 'string',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidTest: Test = {
+ Struct: pattern(string(), /\d+/),
+ data: 'invalid',
+ failures: [,
+}

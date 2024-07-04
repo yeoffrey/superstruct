@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { enums } from '../../../src'
 
-export const Struct = enums(['one', 'two'])
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'enums',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidStringsTest: Test = {
+  Struct: enums(['one', 'two']),
+  data,
+  failures: [
+    {
+      value: 'invalid',
+      type: 'enums',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

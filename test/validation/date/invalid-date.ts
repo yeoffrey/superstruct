@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { date } from '../../../src'
 
-export const Struct = date()
+const data = new Date('invalid')
 
-export const data = new Date('invalid')
-
-export const failures = [
-  {
-    value: data,
-    type: 'date',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidDateTest: Test = {
+  Struct: date(),
+  data,
+  failures: [
+    {
+      value: data,
+      type: 'date',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

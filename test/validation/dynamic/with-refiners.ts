@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { dynamic, string, nonempty } from '../../../src'
 
-export const Struct = dynamic(() => nonempty(string()))
+const data = ''
 
-export const data = ''
-
-export const failures = [
-  {
-    value: data,
-    type: 'string',
-    refinement: 'nonempty',
-    path: [],
-    branch: [data],
-  },
-]
+export const withRefinersTest: Test = {
+  Struct: dynamic(() => nonempty(string())),
+  data,
+  failures: [
+    {
+      value: data,
+      type: 'string',
+      refinement: 'nonempty',
+      path: [],
+      branch: [data],
+    },
+  ],
+}

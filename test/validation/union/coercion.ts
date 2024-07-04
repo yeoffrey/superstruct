@@ -1,12 +1,12 @@
+import { Test } from '../../types'
 import { union, string, number, defaulted } from '../../../src'
 
 const A = defaulted(string(), 'foo')
 const B = number()
 
-export const Struct = union([A, B])
-
-export const data = undefined
-
-export const output = 'foo'
-
-export const create = true
+export const coercionTest: Test = {
+  Struct: union([A, B]),
+  data: undefined,
+  output: 'foo',
+  create: true,
+}

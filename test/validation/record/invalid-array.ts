@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { record, string, number } from '../../../src'
 
-export const Struct = record(string(), number())
 
-export const data = []
 
-export const failures = [
   {
     value: [],
     type: 'record',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidArrayTest: Test = {
+ Struct: record(string(), number()),
+ data: [],
+ failures: [,
+}

@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { any } from '../../../src'
 
-export const Struct = any()
-
-export const data = undefined
-
-export const output = undefined
+export const validUndefinedTest: Test = {
+  Struct: any(),
+  data: undefined,
+  output: undefined,
+}

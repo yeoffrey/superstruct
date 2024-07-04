@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { regexp } from '../../../src'
 
-export const Struct = regexp()
 
-export const data = 'invalid'
 
-export const failures = [
   {
     value: 'invalid',
     type: 'regexp',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidTest: Test = {
+ Struct: regexp(),
+ data: 'invalid',
+ failures: [,
+}

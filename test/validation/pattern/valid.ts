@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { string, pattern } from '../../../src'
 
-export const Struct = pattern(string(), /\d+/)
-
-export const data = '123'
-
-export const output = '123'
+export const validTest: Test = {
+  Struct: pattern(string(), /\d+/),
+  data: '123',
+  output: '123',
+}

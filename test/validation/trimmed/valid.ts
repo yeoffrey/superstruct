@@ -1,9 +1,9 @@
+import { Test } from '../../types'
 import { string, trimmed } from '../../../src'
 
-export const Struct = trimmed(string())
-
-export const data = '  valid  '
-
-export const output = 'valid'
-
-export const create = true
+export const validTest: Test = {
+  Struct: trimmed(string()),
+  data: '  valid  ',
+  output: 'valid',
+  create: true,
+}

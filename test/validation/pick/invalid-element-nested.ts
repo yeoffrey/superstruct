@@ -1,6 +1,6 @@
+import {Test} from '../../types'
 import { pick, object, array, string } from '../../../src'
 
-export const Struct = pick(
   object({
     name: string(),
     emails: array(string()),
@@ -8,16 +8,19 @@ export const Struct = pick(
   ['emails']
 )
 
-export const data = {
-  emails: ['name@example.com', false],
-}
 
-export const failures = [
-  {
+export const invalidElementNestedTest: Test = {
+ Struct: pick(,
+ data:  {
+    emails: ['name@example.com', false],
+    }
+, failures: [,
+    {
     value: false,
     type: 'string',
     refinement: undefined,
     path: ['emails', 1],
     branch: [data, data.emails, data.emails[1]],
-  },
-]
+    },
+    ]
+}

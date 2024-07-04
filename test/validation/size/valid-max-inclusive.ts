@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { string, size } from '../../../src'
 
-export const Struct = size(string(), 1, 5)
-
-export const data = 'abcde'
-
-export const output = 'abcde'
+export const validMaxInclusiveTest: Test = {
+  Struct: size(string(), 1, 5),
+  data: 'abcde',
+  output: 'abcde',
+}

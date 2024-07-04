@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { object } from '../../../src'
 
-export const Struct = object()
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'object',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidOpaqueTest: Test = {
+  Struct: object(),
+  data,
+  failures: [
+    {
+      value: 'invalid',
+      type: 'object',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

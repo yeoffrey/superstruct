@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { set, number } from '../../../src'
 
-export const Struct = set(number())
 
-export const data = new Set([1, 'b', 3])
 
-export const failures = [
   {
     value: 'b',
     type: 'number',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data, 'b'],
   },
 ]
+
+export const invalidElementTest: Test = {
+ Struct: set(number()),
+ data: new Set([1, 'b', 3]),
+ failures: [,
+}

@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { string, size } from '../../../src'
 
-export const Struct = size(string(), 1, 5)
 
-export const data = ''
 
-export const failures = [
   {
     value: '',
     type: 'string',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidStringTest: Test = {
+ Struct: size(string(), 1, 5),
+ data: '',
+ failures: [,
+}

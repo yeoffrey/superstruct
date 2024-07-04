@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { number, min } from '../../../src'
 
-export const Struct = min(number(), 0, { exclusive: true })
+const data = 0
 
-export const data = 0
-
-export const failures = [
-  {
-    value: 0,
-    type: 'number',
-    refinement: 'min',
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidExclusiveTest: Test = {
+  Struct: min(number(), 0, { exclusive: true }),
+  data,
+  failures: [
+    {
+      value: 0,
+      type: 'number',
+      refinement: 'min',
+      path: [],
+      branch: [data],
+    },
+  ],
+}

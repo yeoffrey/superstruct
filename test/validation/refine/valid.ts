@@ -1,7 +1,11 @@
+import {Test} from '../../types'
 import { string, refine } from '../../../src'
 
-export const Struct = refine(string(), 'email', (value) => value.includes('@'))
 
-export const data = 'name@example.com'
 
-export const output = 'name@example.com'
+
+export const validTest: Test = {
+ Struct: refine(string(), 'email', (value) => value.includes('@')),
+ data: 'name@example.com',
+ output: 'name@example.com',
+}

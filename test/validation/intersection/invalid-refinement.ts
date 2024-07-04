@@ -1,18 +1,20 @@
+import { Test } from '../../types'
 import { intersection, refine, number } from '../../../src'
 
 const A = number()
 const B = refine(number(), 'positive', (value) => value > 0)
+const data = -1
 
-export const Struct = intersection([A, B])
-
-export const data = -1
-
-export const failures = [
-  {
-    type: 'number',
-    refinement: 'positive',
-    value: -1,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidRefinementTest: Test = {
+  Struct: intersection([A, B]),
+  data,
+  failures: [
+    {
+      type: 'number',
+      refinement: 'positive',
+      value: data,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

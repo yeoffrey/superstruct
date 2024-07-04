@@ -1,15 +1,18 @@
+import { Test } from '../../types'
 import { integer } from '../../../src'
 
-export const Struct = integer()
+const data = 'invalid'
 
-export const data = 'invalid'
-
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'integer',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const invalidTest: Test = {
+  Struct: integer(),
+  data,
+  failures: [
+    {
+      value: 'invalid',
+      type: 'integer',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+}

@@ -1,10 +1,8 @@
+import {Test} from '../../types'
 import { number, size } from '../../../src'
 
-export const Struct = size(number(), 1, 5)
 
-export const data = 0
 
-export const failures = [
   {
     value: 0,
     type: 'number',
@@ -13,3 +11,9 @@ export const failures = [
     branch: [data],
   },
 ]
+
+export const invalidNumberTest: Test = {
+ Struct: size(number(), 1, 5),
+ data: 0,
+ failures: [,
+}

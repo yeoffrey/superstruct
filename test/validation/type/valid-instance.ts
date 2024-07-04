@@ -1,3 +1,4 @@
+import { Test } from '../../types'
 import { type, string } from '../../../src'
 
 class Person {
@@ -8,10 +9,12 @@ class Person {
   }
 }
 
-export const Struct = type({
-  name: string(),
-})
+const data = new Person('john')
 
-export const data = new Person('john')
-
-export const output = data
+export const validInstanceTest: Test = {
+  Struct: type({
+    name: string(),
+  }),
+  data,
+  output: data,
+}

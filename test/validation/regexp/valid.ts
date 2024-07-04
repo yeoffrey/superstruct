@@ -1,7 +1,8 @@
+import { Test } from '../../types'
 import { regexp } from '../../../src'
 
-export const Struct = regexp()
-
-export const data = /./
-
-export const output = data
+export const validTest: Test = {
+  Struct: regexp(),
+  data: /./,
+  output: data,
+}
