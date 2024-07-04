@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { any } from '../../../src'
-
-export const Struct = any()
 
 export const data = undefined
 
-export const output = undefined
+export const test = {
+  Struct: any(),
+  data: undefined,
+  output: undefined,
+  name: 'test/validation/any/valid-undefined',
+}
+
+testRunner(test)

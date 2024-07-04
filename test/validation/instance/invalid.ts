@@ -1,15 +1,23 @@
+import { testRunner } from '../../testRunner'
 import { instance } from '../../../src'
-
-export const Struct = instance(Array)
 
 export const data = false
 
-export const failures = [
-  {
-    value: false,
-    type: 'instance',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const test = {
+  Struct: instance(Array),
+  data: false,
+
+  failures: [
+    {
+      value: false,
+      type: 'instance',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+
+  name: 'test/validation/instance/invalid',
+}
+
+testRunner(test)

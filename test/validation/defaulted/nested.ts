@@ -1,13 +1,21 @@
+import { testRunner } from '../../testRunner'
 import { defaulted, string, object } from '../../../src'
-
-export const Struct = object({
-  title: defaulted(string(), 'Untitled'),
-})
 
 export const data = {}
 
-export const output = {
-  title: 'Untitled',
+export const test = {
+  Struct: object({
+    title: defaulted(string(), 'Untitled'),
+  }),
+
+  data: {},
+
+  output: {
+    title: 'Untitled',
+  },
+
+  create: true,
+  name: 'test/validation/defaulted/nested',
 }
 
-export const create = true
+testRunner(test)

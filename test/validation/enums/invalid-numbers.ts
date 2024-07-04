@@ -1,15 +1,23 @@
+import { testRunner } from '../../testRunner'
 import { enums } from '../../../src'
-
-export const Struct = enums([1, 2])
 
 export const data = 'invalid'
 
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'enums',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const test = {
+  Struct: enums([1, 2]),
+  data: 'invalid',
+
+  failures: [
+    {
+      value: 'invalid',
+      type: 'enums',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+
+  name: 'test/validation/enums/invalid-numbers',
+}
+
+testRunner(test)

@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { unknown } from '../../../src'
-
-export const Struct = unknown()
 
 export const data = 1
 
-export const output = 1
+export const test = {
+  Struct: unknown(),
+  data: 1,
+  output: 1,
+  name: 'test/validation/unknown/valid-number',
+}
+
+testRunner(test)

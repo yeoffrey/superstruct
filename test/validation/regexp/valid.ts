@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { regexp } from '../../../src'
-
-export const Struct = regexp()
 
 export const data = /./
 
-export const output = data
+export const test = {
+  Struct: regexp(),
+  data: /./,
+  output: data,
+  name: 'test/validation/regexp/valid',
+}
+
+testRunner(test)

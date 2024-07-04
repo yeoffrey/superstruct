@@ -1,15 +1,23 @@
+import { testRunner } from '../../testRunner'
 import { bigint } from '../../../src'
-
-export const Struct = bigint()
 
 export const data = 'invalid'
 
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'bigint',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const test = {
+  Struct: bigint(),
+  data: 'invalid',
+
+  failures: [
+    {
+      value: 'invalid',
+      type: 'bigint',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+
+  name: 'test/validation/bigint/invalid',
+}
+
+testRunner(test)

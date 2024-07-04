@@ -1,11 +1,15 @@
+import { testRunner } from '../../testRunner'
 import { string, unknown, coerce } from '../../../src'
-
-export const Struct = coerce(string(), unknown(), (x) =>
-  x == null ? 'unknown' : x
-)
 
 export const data = 'known'
 
-export const output = 'known'
+export const test = {
+  Struct: coerce(string(), unknown(), (x) => (x == null ? 'unknown' : x)),
 
-export const create = true
+  data: 'known',
+  output: 'known',
+  create: true,
+  name: 'test/validation/coerce/unchanged',
+}
+
+testRunner(test)

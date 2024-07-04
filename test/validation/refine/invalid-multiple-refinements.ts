@@ -1,3 +1,4 @@
+import { testRunner } from '../../testRunner'
 import { string, refine, object } from '../../../src'
 
 const PasswordValidator = refine(string(), 'MinimumLength', (pw) =>
@@ -8,34 +9,41 @@ const changePasswordStruct = object({
   confirmPassword: string(),
 })
 
-export const Struct = refine(
-  changePasswordStruct,
-  'PasswordsDoNotMatch',
-  (values) => {
-    return values.newPassword === values.confirmPassword
-      ? true
-      : 'Passwords do not match'
-  }
-)
-
 export const data = {
   newPassword: '1234567',
   confirmPassword: '123456789',
 }
 
-export const failures = [
-  {
-    value: data.newPassword,
-    type: 'string',
-    refinement: 'MinimumLength',
-    path: ['newPassword'],
-    branch: [data, data.newPassword],
+export const test = {
+  Struct: refine(changePasswordStruct, 'PasswordsDoNotMatch', (values) => {
+    return values.newPassword === values.confirmPassword
+      ? true
+      : 'Passwords do not match'
+  }),
+
+  data: {
+    newPassword: '1234567',
+    confirmPassword: '123456789',
   },
-  {
-    value: data,
-    type: 'object',
-    refinement: 'PasswordsDoNotMatch',
-    path: [],
-    branch: [data],
-  },
-]
+
+  failures: [
+    {
+      value: data.newPassword,
+      type: 'string',
+      refinement: 'MinimumLength',
+      path: ['newPassword'],
+      branch: [data, data.newPassword],
+    },
+    {
+      value: data,
+      type: 'object',
+      refinement: 'PasswordsDoNotMatch',
+      path: [],
+      branch: [data],
+    },
+  ],
+
+  name: 'test/validation/refine/invalid-multiple-refinements',
+}
+
+testRunner(test)

@@ -1,9 +1,8 @@
+import { testRunner } from '../../testRunner'
 import { type, object, assign, string, number } from '../../../src'
 
 const A = type({ a: string() })
 const B = object({ a: number(), b: number() })
-
-export const Struct = assign(A, B)
 
 export const data = {
   a: 'invalid',
@@ -11,12 +10,26 @@ export const data = {
   c: 5,
 }
 
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'number',
-    refinement: undefined,
-    path: ['a'],
-    branch: [data, data.a],
+export const test = {
+  Struct: assign(A, B),
+
+  data: {
+    a: 'invalid',
+    b: 2,
+    c: 5,
   },
-]
+
+  failures: [
+    {
+      value: 'invalid',
+      type: 'number',
+      refinement: undefined,
+      path: ['a'],
+      branch: [data, data.a],
+    },
+  ],
+
+  name: 'test/validation/assign/invalid-type',
+}
+
+testRunner(test)

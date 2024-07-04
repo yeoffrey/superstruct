@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { func } from '../../../src'
-
-export const Struct = func()
 
 export const data = function () {}
 
-export const output = data
+export const test = {
+  Struct: func(),
+  data: function () {},
+  output: data,
+  name: 'test/validation/function/valid',
+}
+
+testRunner(test)

@@ -1,17 +1,24 @@
+import { testRunner } from '../../testRunner'
 import { string, number, coerce } from '../../../src'
-
-export const Struct = coerce(string(), number(), (x) => 'known')
 
 export const data = false
 
-export const failures = [
-  {
-    value: false,
-    type: 'string',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const test = {
+  Struct: coerce(string(), number(), (x) => 'known'),
+  data: false,
 
-export const create = true
+  failures: [
+    {
+      value: false,
+      type: 'string',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+
+  create: true,
+  name: 'test/validation/coerce/condition-not-met',
+}
+
+testRunner(test)

@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { string, empty } from '../../../src'
-
-export const Struct = empty(string())
 
 export const data = ''
 
-export const output = ''
+export const test = {
+  Struct: empty(string()),
+  data: '',
+  output: '',
+  name: 'test/validation/empty/valid-string',
+}
+
+testRunner(test)

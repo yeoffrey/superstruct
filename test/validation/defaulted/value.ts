@@ -1,9 +1,14 @@
+import { testRunner } from '../../testRunner'
 import { number, defaulted } from '../../../src'
-
-export const Struct = defaulted(number(), 42)
 
 export const data = undefined
 
-export const output = 42
+export const test = {
+  Struct: defaulted(number(), 42),
+  data: undefined,
+  output: 42,
+  create: true,
+  name: 'test/validation/defaulted/value',
+}
 
-export const create = true
+testRunner(test)

@@ -1,3 +1,4 @@
+import { testRunner } from '../../testRunner'
 import { assert, type, dynamic, literal, string, number } from '../../../src'
 
 const Entity = type({
@@ -19,17 +20,28 @@ const map = {
   PRODUCT: Product,
 }
 
-export const Struct = dynamic((entity) => {
-  assert(entity, Entity)
-  return map[entity.object]
-})
-
 export const data = {
   object: 'PRODUCT',
   price: 1999,
 }
 
-export const output = {
-  object: 'PRODUCT',
-  price: 1999,
+export const test = {
+  Struct: dynamic((entity) => {
+    assert(entity, Entity)
+    return map[entity.object]
+  }),
+
+  data: {
+    object: 'PRODUCT',
+    price: 1999,
+  },
+
+  output: {
+    object: 'PRODUCT',
+    price: 1999,
+  },
+
+  name: 'test/validation/dynamic/valid-reference',
 }
+
+testRunner(test)

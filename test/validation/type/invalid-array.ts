@@ -1,15 +1,23 @@
+import { testRunner } from '../../testRunner'
 import { type } from '../../../src'
-
-export const Struct = type({})
 
 export const data = []
 
-export const failures = [
-  {
-    value: [],
-    type: 'type',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const test = {
+  Struct: type({}),
+  data: [],
+
+  failures: [
+    {
+      value: [],
+      type: 'type',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+
+  name: 'test/validation/type/invalid-array',
+}
+
+testRunner(test)

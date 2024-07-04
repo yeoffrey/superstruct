@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { lazy, string } from '../../../src'
-
-export const Struct = lazy(() => string())
 
 export const data = 'two'
 
-export const output = 'two'
+export const test = {
+  Struct: lazy(() => string()),
+  data: 'two',
+  output: 'two',
+  name: 'test/validation/lazy/valid',
+}
+
+testRunner(test)

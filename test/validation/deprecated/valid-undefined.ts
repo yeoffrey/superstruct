@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { deprecated, number } from '../../../src'
-
-export const Struct = deprecated(number(), () => {})
 
 export const data = undefined
 
-export const output = undefined
+export const test = {
+  Struct: deprecated(number(), () => {}),
+  data: undefined,
+  output: undefined,
+  name: 'test/validation/deprecated/valid-undefined',
+}
+
+testRunner(test)

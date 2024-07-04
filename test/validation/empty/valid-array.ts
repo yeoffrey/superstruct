@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { number, array, empty } from '../../../src'
-
-export const Struct = empty(array(number()))
 
 export const data = []
 
-export const output = []
+export const test = {
+  Struct: empty(array(number())),
+  data: [],
+  output: [],
+  name: 'test/validation/empty/valid-array',
+}
+
+testRunner(test)

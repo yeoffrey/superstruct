@@ -1,7 +1,13 @@
+import { testRunner } from '../../testRunner'
 import { dynamic, string } from '../../../src'
-
-export const Struct = dynamic(() => string())
 
 export const data = 'valid'
 
-export const output = 'valid'
+export const test = {
+  Struct: dynamic(() => string()),
+  data: 'valid',
+  output: 'valid',
+  name: 'test/validation/dynamic/valid',
+}
+
+testRunner(test)

@@ -81,5 +81,8 @@
     "validate",
     "validation",
     "validator"
-  ]
+  ],
+  "dependencies": {
+    "jscodeshift": "^0.16.1"
+  }
 }

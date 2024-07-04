@@ -1,23 +1,34 @@
+import { testRunner } from '../../testRunner'
 import { pick, object, string, number } from '../../../src'
-
-export const Struct = pick(
-  object({
-    name: string(),
-    age: number(),
-  }),
-  ['age']
-)
 
 export const data = {
   age: 'invalid',
 }
 
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'number',
-    refinement: undefined,
-    path: ['age'],
-    branch: [data, data.age],
+export const test = {
+  Struct: pick(
+    object({
+      name: string(),
+      age: number(),
+    }),
+    ['age']
+  ),
+
+  data: {
+    age: 'invalid',
   },
-]
+
+  failures: [
+    {
+      value: 'invalid',
+      type: 'number',
+      refinement: undefined,
+      path: ['age'],
+      branch: [data, data.age],
+    },
+  ],
+
+  name: 'test/validation/pick/invalid-property',
+}
+
+testRunner(test)

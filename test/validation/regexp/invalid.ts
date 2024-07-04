@@ -1,15 +1,23 @@
+import { testRunner } from '../../testRunner'
 import { regexp } from '../../../src'
-
-export const Struct = regexp()
 
 export const data = 'invalid'
 
-export const failures = [
-  {
-    value: 'invalid',
-    type: 'regexp',
-    refinement: undefined,
-    path: [],
-    branch: [data],
-  },
-]
+export const test = {
+  Struct: regexp(),
+  data: 'invalid',
+
+  failures: [
+    {
+      value: 'invalid',
+      type: 'regexp',
+      refinement: undefined,
+      path: [],
+      branch: [data],
+    },
+  ],
+
+  name: 'test/validation/regexp/invalid',
+}
+
+testRunner(test)
